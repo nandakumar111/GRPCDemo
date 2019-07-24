@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "com.test.grpc";
+package test;
+
+service User{
+    rpc Login(LoginRequest) returns (APIResponse);
+}
+
+message LoginRequest {
+    string username = 1;
+    string password = 2;
+}
+message APIResponse {
+    string message = 1;
+    int32 code = 2;
+}
